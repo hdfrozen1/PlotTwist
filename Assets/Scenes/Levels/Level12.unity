@@ -978,10 +978,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b498afebb3270eb45a016634b49b7d16, type: 3}
     - target: {fileID: 5481403360251499296, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
-      propertyPath: isMirror
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5481403360251499296, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
       propertyPath: tag_name
       value: Player
       objectReference: {fileID: 0}
@@ -3388,6 +3384,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538145966}
   m_CullTransparentMesh: 1
+--- !u!1 &547001752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 547001755}
+  - component: {fileID: 547001754}
+  - component: {fileID: 547001753}
+  m_Layer: 0
+  m_Name: FlashlightManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &547001753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547001752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3468916351407db4ea148375c62d3fa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1862989997}
+--- !u!114 &547001754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547001752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e2abda603077d498663adb5fc5655e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &547001755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547001752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 468.51083, y: 429.32184, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &553221034
 GameObject:
   m_ObjectHideFlags: 0
@@ -9465,6 +9519,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b529d81965290c14b9fc8bb4b1f5cd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expYear: {fileID: 1862989997}
+  loopingScroll: {fileID: 1865965922}
+  minuteLoopingScroll: {fileID: 1865965923}
 --- !u!4 &1557830559 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 88490763435861235, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
@@ -10797,7 +10854,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Plain and Simple
+  m_Text: Turn On Flash
 --- !u!222 &1862989998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10857,6 +10914,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5ae8344f8e45d544996a313b7008072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollRect: {fileID: 675248693}
+  content: {fileID: 195575715}
+  snapSpeed: 10
+  itemHeight: 37.5
 --- !u!114 &1865965923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10869,6 +10930,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2453fdedf61f0f64bbbb0ce73fee3524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scrollRect: {fileID: 1359244787}
+  content: {fileID: 1785407078}
+  snapSpeed: 10
+  itemHeight: 37.5
 --- !u!1 &1868203162
 GameObject:
   m_ObjectHideFlags: 0
@@ -10980,6 +11045,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b529d81965290c14b9fc8bb4b1f5cd9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  expYear: {fileID: 1862989997}
+  loopingScroll: {fileID: 1865965922}
+  minuteLoopingScroll: {fileID: 1865965923}
 --- !u!4 &1874176812
 Transform:
   m_ObjectHideFlags: 0
@@ -12045,6 +12113,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c0b2047698cc04cb928406a6d14bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 0}
+  handleOpenDoor: {fileID: 0}
+  openDoorButton: {fileID: 0}
+  nextLevelCollider: {fileID: 0}
+  moveRightButton: {fileID: 428965784}
+  moveLeftButton: {fileID: 1158680241}
+  jumpButton: {fileID: 1347975387}
+  gravityDirection: {x: 0, y: -5}
+  level: 9
 --- !u!4 &2043320848
 Transform:
   m_ObjectHideFlags: 0
@@ -12386,7 +12463,6 @@ SceneRoots:
   - {fileID: 297804589}
   - {fileID: 1772084417}
   - {fileID: 490258680}
-  - {fileID: 1169693856}
   - {fileID: 2043320848}
   - {fileID: 639775649}
   - {fileID: 177853515}
@@ -12397,3 +12473,5 @@ SceneRoots:
   - {fileID: 1627642638}
   - {fileID: 1783560680}
   - {fileID: 1876682211}
+  - {fileID: 1169693856}
+  - {fileID: 547001755}

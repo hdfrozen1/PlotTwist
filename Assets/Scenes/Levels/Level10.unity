@@ -978,6 +978,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: b498afebb3270eb45a016634b49b7d16, type: 3}
     - target: {fileID: 5481403360251499296, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
+      propertyPath: isMirror
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5481403360251499296, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
       propertyPath: tag_name
       value: Player
       objectReference: {fileID: 0}
@@ -987,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5481403360251499296, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5481403360251499296, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
       propertyPath: moveSpeed
@@ -1037,7 +1041,7 @@ PrefabInstance:
       addedObject: {fileID: 1557830548}
     - targetCorrespondingSourceObject: {fileID: 939301065813294812, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1557830554}
+      addedObject: {fileID: 1557830564}
     - targetCorrespondingSourceObject: {fileID: 1752481842587100942, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1612326798}
@@ -2746,6 +2750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82310b279505e8245930581846b5c198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 0}
 --- !u!1 &406671750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4643,6 +4648,7 @@ GameObject:
   - component: {fileID: 675248695}
   - component: {fileID: 675248694}
   - component: {fileID: 675248693}
+  - component: {fileID: 675248696}
   m_Layer: 5
   m_Name: Hour Scroll
   m_TagString: Untagged
@@ -4738,6 +4744,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675248691}
   m_CullTransparentMesh: 1
+--- !u!114 &675248696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 675248691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6881952867fff4d9667e6f02fb0b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollType: 0
+  scrollRect: {fileID: 675248693}
+  content: {fileID: 195575715}
+  snapSpeed: 10
+  itemHeight: 37.5
 --- !u!1 &710764306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8261,8 +8284,6 @@ GameObject:
   - component: {fileID: 1347975385}
   - component: {fileID: 1347975384}
   - component: {fileID: 1347975387}
-  - component: {fileID: 1347975389}
-  - component: {fileID: 1347975388}
   m_Layer: 5
   m_Name: Jump Button
   m_TagString: Untagged
@@ -8386,78 +8407,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isLeftButton: 0
   isJumpButton: 1
---- !u!50 &1347975388
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347975382}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &1347975389
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1347975382}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.5, y: 0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 160, y: 60}
-  m_EdgeRadius: 0
 --- !u!1 &1359244785
 GameObject:
   m_ObjectHideFlags: 0
@@ -8470,6 +8419,7 @@ GameObject:
   - component: {fileID: 1359244789}
   - component: {fileID: 1359244788}
   - component: {fileID: 1359244787}
+  - component: {fileID: 1359244790}
   m_Layer: 5
   m_Name: Minute Scroll
   m_TagString: Untagged
@@ -8565,6 +8515,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359244785}
   m_CullTransparentMesh: 1
+--- !u!114 &1359244790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359244785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc6881952867fff4d9667e6f02fb0b9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollType: 1
+  scrollRect: {fileID: 1359244787}
+  content: {fileID: 1785407078}
+  snapSpeed: 10
+  itemHeight: 37.5
 --- !u!1 &1380928849
 GameObject:
   m_ObjectHideFlags: 0
@@ -9448,26 +9415,27 @@ MonoBehaviour:
   zoomSpeed: 0.01
   minScale: 0.2
   maxScale: 1.5
---- !u!114 &1557830554
+--- !u!4 &1557830559 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 88490763435861235, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
+  m_PrefabInstance: {fileID: 135417901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1557830564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557830541}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b529d81965290c14b9fc8bb4b1f5cd9c, type: 3}
+  m_Script: {fileID: 11500000, guid: f420f88b78592f34bb1a1ff90057c0f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   expYear: {fileID: 1862989997}
-  loopingScroll: {fileID: 1865965922}
-  minuteLoopingScroll: {fileID: 1865965923}
---- !u!4 &1557830559 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 88490763435861235, guid: 24496039b2222e440b6ac9f9b4dd8ad9, type: 3}
-  m_PrefabInstance: {fileID: 135417901}
-  m_PrefabAsset: {fileID: 0}
+  loopingScrolls:
+  - {fileID: 675248696}
+  - {fileID: 1359244790}
 --- !u!1 &1610626332
 GameObject:
   m_ObjectHideFlags: 0
@@ -10813,8 +10781,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1865965921}
-  - component: {fileID: 1865965922}
-  - component: {fileID: 1865965923}
   m_Layer: 5
   m_Name: ClockParent
   m_TagString: Untagged
@@ -10843,38 +10809,6 @@ RectTransform:
   m_AnchoredPosition: {x: 256, y: 61}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1865965922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865965920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ae8344f8e45d544996a313b7008072, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollRect: {fileID: 675248693}
-  content: {fileID: 195575715}
-  snapSpeed: 10
-  itemHeight: 37.5
---- !u!114 &1865965923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1865965920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2453fdedf61f0f64bbbb0ce73fee3524, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollRect: {fileID: 1359244787}
-  content: {fileID: 1785407078}
-  snapSpeed: 10
-  itemHeight: 37.5
 --- !u!1 &1868203162
 GameObject:
   m_ObjectHideFlags: 0
@@ -10963,7 +10897,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1874176812}
-  - component: {fileID: 1874176811}
   - component: {fileID: 1874176814}
   - component: {fileID: 1874176816}
   - component: {fileID: 1874176815}
@@ -10974,21 +10907,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1874176811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1874176810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b529d81965290c14b9fc8bb4b1f5cd9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  expYear: {fileID: 1862989997}
-  loopingScroll: {fileID: 1865965922}
-  minuteLoopingScroll: {fileID: 1865965923}
 --- !u!4 &1874176812
 Transform:
   m_ObjectHideFlags: 0
@@ -11980,59 +11898,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039519920}
   m_CullTransparentMesh: 1
---- !u!1 &2043320846
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2043320848}
-  - component: {fileID: 2043320847}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &2043320847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043320846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5c0b2047698cc04cb928406a6d14bd2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
-  handleOpenDoor: {fileID: 0}
-  openDoorButton: {fileID: 0}
-  nextLevelCollider: {fileID: 0}
-  moveRightButton: {fileID: 428965784}
-  moveLeftButton: {fileID: 1158680241}
-  jumpButton: {fileID: 1347975387}
-  gravityDirection: {x: 0, y: -5}
-  level: 9
---- !u!4 &2043320848
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2043320846}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2053363543
 GameObject:
   m_ObjectHideFlags: 0
@@ -12360,7 +12225,6 @@ SceneRoots:
   - {fileID: 1772084417}
   - {fileID: 490258680}
   - {fileID: 1169693856}
-  - {fileID: 2043320848}
   - {fileID: 277591248}
   - {fileID: 177853515}
   - {fileID: 375532100}
